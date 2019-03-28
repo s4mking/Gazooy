@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gazooyr</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/header'%>
+  </head>
+
+  <body>
+
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-4 jumbotron'>
+        You're on Gazooyr !
+    </div>
+     <div class='col-md-8 well'>
+        Le twitter qu'il est vachement plus mieux
+    </div>
+    <h1>Tendances</h1>
+    <h2>Les derniers gazooies</h2>
+    <div>
+
+   
+      <%= yield %>
+         <%= render 'layouts/footer'%>
+          </div>
+  </div>
+</div>
+  </body>
+  
+</html>

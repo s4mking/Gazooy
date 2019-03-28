@@ -1,0 +1,20 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-4 jumbotron'>
+        You're on Gazooyr !
+    </div>
+     <div class='col-md-8 well'>
+        Le twitter qu'il est vachement plus mieux
+    </div>
+    <h1>Tendances</h1>
+    <h2>Les derniers gazooies</h2>
+    <div>
+  <% @gazooys.reverse_each do |item| %>
+<%= item.text %>
+<% end %>
+<% @profiles.each do |item| %>
+Name: <%= item.user_id %><br />
+<% end %>
+    </div>
+  </div>
+</div>

@@ -67,10 +67,13 @@ group :development, :test do
   gem 'simplecov', :require => false
   gem 'bootstrap-sass', '~> 3.4.1'
   gem 'devise'
+  # gem 'RedCloth'
   gem 'carrierwave', '~> 1.0'
 gem 'sassc-rails', '>= 2.1.0'
 gem "mini_magick"
 gem 'jquery-rails'
+gem 'popper_js', '~> 1.14.5'
+gem 'bootstrap'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

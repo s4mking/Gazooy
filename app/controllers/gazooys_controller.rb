@@ -7,6 +7,7 @@ class GazooysController < ApplicationController
    @gazooys = Gazooy.all
    @users = User.all
    @profiles = Profile.all
+   @pages = Page.all
    #@gazooys = current_user.gazooys
   end
 

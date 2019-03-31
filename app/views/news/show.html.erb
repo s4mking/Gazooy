@@ -15,5 +15,45 @@
   <%= @news.content %>
 </p>
 
+<% if user_signed_in? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Comment</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% compteur = 0 %>
+    <% @comments.each do |comment| %>
+    <% compteur = compteur+1 %> 
+      <% end %>
+    <h1><%= compteur %> Commentaire(s)</h1>
+      <% @comments.each do |comment| %>
+      
+        <tr>
+          <td><%= comment.comment %></td>
+          <td><%= link_to 'Show', comment %></td>
+          <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+          <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div id='new_comment'>
+  <%= form_with(model: @comment, remote: true) do |form| %>
+    <div class="field">
+      <%= form.label :comment %>
+      <%= form.text_area :comment %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit("Envoyer") %>
+    </div>
+  <% end %>
+<% end %>
+</div>
 <%= link_to 'Edit', edit_news_path(@news) %> |
 <%= link_to 'Back', news_index_path %>

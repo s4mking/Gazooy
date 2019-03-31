@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :comments
   #root 'home#index'
   root 'gazooys#index'
   # resources :profiles
@@ -17,8 +18,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
     resources :news
 
-    get '/:id' => 'pages#show'
-    resources :pages, except: [:index]
+    #get '/:id' => 'pages#show'
+    #resources :pages, except: [:index]
+    resources :pages, param: :slug
     post 'comments'=>'comments#create'
     resources :profiles, :except => [:destroy, :new, :create] do
         post "follow/:user_id", :to => "profiles#follow"
@@ -27,5 +29,5 @@ Rails.application.routes.draw do
         get "followees/", :to => "profiles#followees"
         get "mentions/", :to => "profiles#mentions"
     end
-    get '/:id' => 'pages#show'
+   # get '/:id' => 'pages#show'
 end

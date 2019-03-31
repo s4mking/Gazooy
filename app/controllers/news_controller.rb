@@ -1,3 +1,4 @@
+# require 'RedCloth'
 class NewsController < ApplicationController
   before_action :set_news, only: [:show, :edit, :update, :destroy]
 
@@ -5,11 +6,19 @@ class NewsController < ApplicationController
   # GET /news.json
   def index
     @news = News.all
+    # text = "This is *my* text."
+    # RedCloth.new(text).to_html
   end
 
   # GET /news/1
   # GET /news/1.json
   def show
+#     doc = RedCloth.new EOD
+# @new.content
+# EOD 
+# content_render= doc.to_html
+@comments = Comment.all
+@comment = Comment.new
   end
 
   # GET /news/new

@@ -40,3 +40,8 @@
 </div>
 <br>
 <%= link_to 'New Gazooy', new_gazooy_path %>
+ <div class='col-md-4 jumbotron pages'>
+        You're on Gazooyr !
+        <% @pages.each do |item| %>
+  <h2>Title: <%= item.title %><br /></h2>
+<% end %>

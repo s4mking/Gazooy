@@ -14,6 +14,7 @@
   <tbody>
     <% @pages.each do |page| %>
       <tr>
+      <td><%= page.slug %></td>
         <td><%= page.title %></td>
         <td><%= page.content %></td>
         <td><%= link_to 'Show', page %></td>

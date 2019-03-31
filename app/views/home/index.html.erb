@@ -1,7 +1,13 @@
 <div class='container'>
   <div class='row'>
-    <div class='col-md-4 jumbotron'>
+    <div class='col-md-4 jumbotron pages'>
         You're on Gazooyr !
+      
+<% @pages.each do |item| %>
+  <h2>Title: <%= item.Title %><br /></h2>
+<% end %>
+
+
     </div>
      <div class='col-md-8 well'>
         Le twitter qu'il est vachement plus mieux

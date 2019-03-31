@@ -20,6 +20,12 @@ class GazooysController < ApplicationController
   # GET /gazooys/new
   def new
     @gazooy = Gazooy.new
+    # def new
+    #   respond_to do |format|
+    #   format.html
+    #   format.js
+    #   end
+      # end
   end
 
   # GET /gazooys/1/edit

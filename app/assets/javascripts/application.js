@@ -15,4 +15,9 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
-//= require_tree .
+//= require turbolinks
+//= require bootstrap
+//= require_tree.
+
+// $("#modal-window").find(".modal-content").html("<%= j (render 'new') %>");
+// $("#modal-window").modal();

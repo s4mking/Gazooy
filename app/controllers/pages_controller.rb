@@ -14,18 +14,20 @@ class PagesController < ApplicationController
 
   # GET /pages/new
   def new
+    @donne= 'new'
     @page = Page.new
   end
 
   # GET /pages/1/edit
   def edit
+    @donne= 'edit'
   end
 
   # POST /pages
   # POST /pages.json
   def create
     @page = Page.new(page_params)
-
+   
     respond_to do |format|
       if @page.save
         format.html { redirect_to @page, notice: 'Page was successfully created.' }

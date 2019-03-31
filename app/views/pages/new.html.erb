@@ -2,7 +2,7 @@
 
 <% if user_signed_in? %>
     <div id='page_pages'>
-<%= render 'form', pages: @page %>
+<%= render 'form', pages: @page, state: @donne %>
 </div>
 <%= link_to 'Back', pages_path %>
 <% else %>

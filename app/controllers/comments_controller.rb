@@ -25,11 +25,12 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
-
+    current_uri = request.env['PATH_INFO']
+    path = Rails.application.routes.recognize_path(current_uri)
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render :show, status: :created, location: @comment }
+        format.html { redirect_to @news, notice: 'Comment was successfully created.' }
+        format.json { render :show, status: :created, location: @news }
       else
         format.html { render :new }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
@@ -44,6 +45,9 @@ class CommentsController < ApplicationController
       if @comment.update(comment_params)
         format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
         format.json { render :show, status: :ok, location: @comment }
+        respond_to do |format|
+          format.js {render inline: "location.reload();" }
+        end
       else
         format.html { render :edit }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
